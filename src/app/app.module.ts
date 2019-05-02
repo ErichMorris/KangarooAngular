@@ -14,6 +14,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { RestaurantsService } from './services/restaurants.service';
+import { NoteIndexComponent } from './components/restaurant/note-index/note-index.component';
+
 import { CustomersService } from './services/customers.service';
 
 const routes = [
@@ -21,11 +25,13 @@ const routes = [
   { path: '**', component: RegistrationComponent }
 ];
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NoteIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,11 @@ const routes = [
     MatInputModule
   ],
   providers: [
+
+    RestaurantsService
+
     CustomersService
+
   ],
   bootstrap: [AppComponent]
 })
