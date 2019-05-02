@@ -7,24 +7,32 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule 
+  MatInputModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NoteIndexComponent } from './components/note/note-index/note-index.component';
+
 import { MenuItemIndexComponent } from './components/menuItem/menu-item-index/menu-item-index.component';
 
 import { RestaurantsService } from './services/restaurants.service';
-import { NoteIndexComponent } from './components/restaurant/note-index/note-index.component';
+
 
 import { CustomersService } from './services/customers.service';
+import { RestaurantIndexComponent } from './components/restaurant/restaurant-index/restaurant-index.component';
+import { AuthService } from './services/auth.service';
+import { MenuItemService } from './services/menu-items.service';
+import { RestaurantCreateComponent } from './components/restaurant/restaurant-create/restaurant-create.component';
+import { OrdersService } from './services/orders.service';
+import { OrderIndexComponent } from './components/order/order-index/order-index.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
-  { path: '**', component: RegistrationComponent }
+  { path: '**', component: RegistrationComponent },
+  {path: 'restaurants', component:RestaurantIndexComponent}
 ];
 
 
@@ -34,11 +42,19 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
 
-    NoteIndexComponent,
-    MenuItemIndexComponent
+   
+    MenuItemIndexComponent,
 
-    NoteIndexComponent
+   
+    RestaurantIndexComponent,
 
+   
+    RestaurantCreateComponent,
+
+   
+    OrderIndexComponent
+
+  
   ],
   imports: [
     BrowserModule,
@@ -49,16 +65,15 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+   
   ],
   providers: [
     AuthService,
-    MenuItemService
-
-    RestaurantsService
-
-    CustomersService
-
+    MenuItemService,
+  RestaurantsService,
+     CustomersService,
+OrdersService
 
   ],
   bootstrap: [AppComponent]
