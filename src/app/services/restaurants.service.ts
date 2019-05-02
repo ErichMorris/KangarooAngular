@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { Restaurant } from '../models/Restaurant';
 
 const ApiUrl ='';
 
@@ -13,6 +14,10 @@ export class RestaurantsService{
 
   getRestaurants() {
     return this._http.get(`${ApiUrl}/Restaurants`,{headers: this.getHeaders()});
+  }
+
+  createRestaurant(restaurant :Restaurant){
+    return this._http.post(`${ApiUrl}/Restaurants`,restaurant,{headers:this.getHeaders()});
   }
 
   private getHeaders(){
