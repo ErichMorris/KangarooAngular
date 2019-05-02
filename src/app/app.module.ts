@@ -13,12 +13,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RestaurantsService } from './services/restaurants.service';
+import { NoteIndexComponent } from './components/restaurant/note-index/note-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NoteIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    RestaurantsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
