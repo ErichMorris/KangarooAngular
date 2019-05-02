@@ -13,12 +13,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoteIndexComponent } from './components/note/note-index/note-index.component';
+import { MenuItemIndexComponent } from './components/menuItem/menu-item-index/menu-item-index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NoteIndexComponent,
+    MenuItemIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    MenuItemService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
