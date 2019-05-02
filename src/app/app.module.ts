@@ -14,6 +14,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoteIndexComponent } from './components/note/note-index/note-index.component';
+import { MenuItemIndexComponent } from './components/menuItem/menu-item-index/menu-item-index.component';
 
 import { RestaurantsService } from './services/restaurants.service';
 import { NoteIndexComponent } from './components/restaurant/note-index/note-index.component';
@@ -31,7 +33,12 @@ const routes = [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
+
+    NoteIndexComponent,
+    MenuItemIndexComponent
+
     NoteIndexComponent
+
   ],
   imports: [
     BrowserModule,
@@ -45,10 +52,13 @@ const routes = [
     MatInputModule
   ],
   providers: [
+    AuthService,
+    MenuItemService
 
     RestaurantsService
 
     CustomersService
+
 
   ],
   bootstrap: [AppComponent]
