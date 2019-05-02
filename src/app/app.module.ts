@@ -1,19 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
+
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 import { 
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule 
 } from '@angular/material';
+
+
+
+
 import { AuthService } from './services/auth.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MenuItemService } from './services/menuItems.service';
+
+
 
 import { MenuItemIndexComponent } from './components/menuItem/menu-item-index/menu-item-index.component';
 
@@ -35,6 +48,7 @@ const routes = [
 ];
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,13 +59,17 @@ const routes = [
 
 
 
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+
+
     RouterModule.forRoot(routes),
     HttpClientModule,
+
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
@@ -63,6 +81,7 @@ const routes = [
     MenuItemService,
     RestaurantsService,
     CustomersService
+
 
 
   ],
