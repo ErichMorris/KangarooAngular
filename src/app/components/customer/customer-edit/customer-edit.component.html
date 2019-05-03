@@ -1,0 +1,38 @@
+<h1>Edit a Customer.</h1>
+<hr>
+
+<div *ngIf="customer">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editCustomerForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="CustomerId" formControlName="CustomerId" type="CustomerId" required [value]="customer.CustomerId" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="CustomerName" formControlName="CustomerName" type="CustomerName" required [value]="customer.CustomerName" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="CustomerAddress" formControlName="CustomerAddress" type="CustomerAddress" required [value]="customer.CustomerAddress" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="CustomerPhone" formControlName="CustomerPhone" type="CustomerPhone" required [value]="customer.CustomerPhone" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="CustomerEmail" formControlName="CustomerEmail" type="CustomerEmail" required [value]="customer.CustomerEmail" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>
+
+
+<a mat-button routerLink="/customers">Back to List</a>

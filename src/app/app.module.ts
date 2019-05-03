@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
 import { 
   MatToolbarModule,
   MatButtonModule,
@@ -27,10 +26,18 @@ import { OrdersService } from './services/orders.service';
 import { OrderIndexComponent } from './components/order/order-index/order-index.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuItemIndexComponent } from './components/menuItem/menuItem-index/menuItem';
+
 import { RestaurantDetailComponent } from './components/restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantEditComponent } from './components/restaurant/restaurant-edit/restaurant-edit.component';
 import { RestaurantDeleteComponent } from './components/restaurant/restaurant-delete/restaurant-delete.component';
 
+
+
+import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
+import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
+import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
+import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
+import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 
 
 const routes = 
@@ -50,9 +57,18 @@ const routes =
 
   { path: 'menuItems', component: MenuItemIndexComponent },
   { path: 'customers', component: CustomerIndexComponent },
+
   { path: 'orders', component: OrderIndexComponent },
   { path: '**', component: RegistrationComponent },
  ];
+
+
+  { path: 'customers/create', component: CustomerCreateComponent },
+  { path: 'customers/detail/:id', component: CustomerDetailComponent },
+  { path: 'customers/edit/:id', component: CustomerEditComponent },
+  { path: 'customers/delete/:id', component: CustomerDeleteComponent },
+  { path: 'orders', component: OrderIndexComponent }
+];
 
 
 @NgModule({
@@ -63,6 +79,7 @@ const routes =
     
     LoginComponent,
     MenuItemIndexComponent,
+
 
    
     RestaurantIndexComponent,
@@ -85,38 +102,45 @@ const routes =
 
 
   
+
+    LoginComponent,
+    RestaurantCreateComponent,
+    OrderIndexComponent,
+    CustomerIndexComponent,
+    CustomerCreateComponent,
+    CustomerDetailComponent,
+    CustomerEditComponent,
+    CustomerDeleteComponent
+
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-
-
     RouterModule.forRoot(routes),
     HttpClientModule,
-
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+
     MatTableModule
    
+
+    MatTableModule 
+
   ],
+
   providers: [
     AuthService,
     MenuItemService,
-
-  
-    
     OrdersService,
-
     RestaurantsService,
     CustomersService
-
-
-
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

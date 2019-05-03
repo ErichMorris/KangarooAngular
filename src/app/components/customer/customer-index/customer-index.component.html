@@ -1,0 +1,49 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/customers/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    
+    <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let customer" routerLink="/customers/detail/{{customer.CustomerId}}"> 
+          <i class="material-icons">library_books</i></mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="CustomerId">
+        <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.CustomerId}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="CustomerName">
+        <mat-header-cell *matHeaderCellDef> Customer Name </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.CustomerName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="CustomerAddress">
+        <mat-header-cell *matHeaderCellDef> Customer Address </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.CustomerAddress}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="CustomerPhone">
+        <mat-header-cell *matHeaderCellDef> Customer Phone </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.CustomerPhone}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="CustomerEmail">
+        <mat-header-cell *matHeaderCellDef> Customer Email </mat-header-cell>
+        <mat-cell *matCellDef="let customer"> {{customer.CustomerEmail}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let customer">
+          <i mat-icon class="material-icons" routerLink="/customers/edit/{{customer.CustomerId}}">edit</i>
+          <i class="material-icons" routerLink="/customers/delete/{{customer.CustomerId}}">delete</i>
+        </mat-cell>
+      </ng-container>
+  </mat-table>
+</div>
