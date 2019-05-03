@@ -1,3 +1,43 @@
-<p>
-  restaurant-create works!
-</p>
+<h1>CREATE A RESTAURANT</h1>
+
+<hr>
+​
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="restaurantForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="Name" type="Name" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="Address" type="Address" required/>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="Description" type="Description" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="ContactNumber" formControlName="ContactNumber" type="ContactNumber" required/>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="ContactEmail" formControlName="ContactEmail" type="ContactEmail" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Rating" formControlName="Rating" type="Rating" required/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Restaurant</button>
+</form>
+​
+<a mat-button routerLink="/notes">Back to List</a>

@@ -1,5 +1,5 @@
 <h1>Index</h1>
-<a mat-raised-button color='primary'>Create New</a>
+<a mat-raised-button color="primary" routerLink="/restaurants/create">Create New</a>
 <hr>
 <div>
   <mat-table #table [dataSource] ="dataSource">
@@ -52,6 +52,26 @@
       <mat-cell *matCellDef="let restaurant">
         <i mat-icon class="material-icons" routerLink="/restaurant/edit/{{restaurant.RestaurantId}}">edit</i>
         <i class="material-icons" routerLink="/restaurants/delete/{{restaurant.RestaurantId}}">delete</i>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let restaurant">
+        <i mat-icon class="material-icons" routerLink="/restaurant/edit/{{restaurant.RestaurantId}}">edit</i>
+        <i class="material-icons" routerLink="/restaurants/delete/{{restaurant.RestaurantId}}">delete</i>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let restaurant">
+        <i mat-icon class="material-icons" routerLink="/restaurant/edit/{{restaurant.RestaurantId}}">edit</i>
+       
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let Restaurant" routerLink="/restaurants/detail/{{restaurant.RestaurantId}}">
+        <i class="material-icons">library_books</i>
       </mat-cell>
     </ng-container>
 

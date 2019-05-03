@@ -1,0 +1,49 @@
+<h1>EDIT A RESTAURANT</h1>
+<hr>
+
+<div *ngIf="restaurant">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editRestaurantForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="RestaurantId" formControlName="RestaurantId" type="RestaurantId" required[value]="restaurant.RestaurantId"/>
+        </mat-form-field>
+      </div>
+
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="Name" formControlName="Name" type="Name" required[value]="restaurant.Name"/>
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="Address" type="Address" required[value]="restaurant.Address"/>
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="Description" formControlName="Description" type="Description" required[value]="restaurant.Description"/>
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="ContactNumber" formControlName="ContactNumber" type="ContactNumber" required[value]="restaurant.ContactNumber"/>
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="ContactEmail" formControlName="ContactEmail" type="ContactEmail" required[value]="restaurant.ContactEmail"/>
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="Rating" formControlName="Rating" type="Rating" required[value]="restaurant.Rating"/>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>
+
+
+<a mat-button routerLink="/restaurants">Back to List</a>
