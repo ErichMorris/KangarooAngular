@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantsService } from '../../../services/restaurants.service';
 import { Restaurant } from '../../../models/Restaurant';
-import {  MatTableDataSource } from '@angular/material';
+
+
+
+import { MatTableDataSource } from '@angular/material';
+
 
 
 @Component({
@@ -15,7 +19,7 @@ export class RestaurantIndexComponent implements OnInit {
 
   ngOnInit() {
    this._restaurantService.getRestaurants().subscribe((restaurants: Restaurant[]) => {
-   
+
    });
   }
  columnNames =['details' , 'RestaurantId' , 'Name','Address','Description','ContactNumber','ContactEmail','Rating','button'];
