@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { 
+import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
@@ -53,52 +53,36 @@ import { MenuItemEditComponent } from './components/menuItem/menu-item-edit/menu
 import { MenuItemDeleteComponent } from './components/menuItem/menu-item-delete/menu-item-delete.component';
 
 
-const routes = 
- [
-  { path: 'register', component: RegistrationComponent },
-  { path: 'login', component: LoginComponent },
- 
-
-
-   
+const routes =
+  [
+    { path: 'register', component: RegistrationComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'restaurants', component: RestaurantIndexComponent },
     { path: 'restaurants/create', component: RestaurantCreateComponent },
-    {path:'restaurants/detail/:id',component:RestaurantDetailComponent},
-    {path:'restaurants/edit/:id',component:RestaurantEditComponent},
-    {path:'restaurants/delete/id',component:RestaurantDeleteComponent},
-  
+    { path: 'restaurants/detail/:id', component: RestaurantDetailComponent },
+    { path: 'restaurants/edit/:id', component: RestaurantEditComponent },
+    { path: 'restaurants/delete/id', component: RestaurantDeleteComponent },
+    { path: 'menuItems', component: MenuItemIndexComponent },
+    { path: 'menuItems/create', component: MenuItemCreateComponent },
+    { path: 'menuItems/detail/:id', component: MenuItemDetailComponent },
+    { path: 'menuItems/edit/:id', component: MenuItemEditComponent },
+    { path: 'menuItems/delete/:id', component: MenuItemDeleteComponent },
+    { path: 'customers', component: CustomerIndexComponent },
+    { path: 'orders', component: OrderIndexComponent },
+    { path: '**', component: RegistrationComponent },
+    { path: 'orders/create', component: OrderCreateComponent },
+    { path: 'orders/detail/:id', component: OrderDetailComponent },
+    { path: 'orders/delete/:id', component: OrderDeleteComponent },
+    { path: 'orders/edit/:id', component: OrderEditComponent },
 
 
+    //{ path: '**', component: RegistrationComponent },
 
-
-  { path: 'menuItems', component: MenuItemIndexComponent },
-  { path: 'menuItems/create', component: MenuItemCreateComponent },
-  { path: 'menuItems/detail/:id', component: MenuItemDetailComponent },
-  { path: 'menuItems/edit/:id', component: MenuItemEditComponent },
-  { path: 'menuItems/delete/:id', component: MenuItemDeleteComponent },
-  { path: 'customers', component: CustomerIndexComponent },
-  { path: 'orders', component: OrderIndexComponent },
-
-  { path: '**', component: RegistrationComponent },
- {path:'orders/create', component:OrderCreateComponent},
- {path:'orders/detail/:id',component:OrderDetailComponent},
-{path:'orders/delete/:id',component:OrderDeleteComponent},
-
-{path:'orders/edit/:id',component:OrderEditComponent},
-
-
-  //{ path: '**', component: RegistrationComponent },
-
-  { path: 'customers/create', component: CustomerCreateComponent },
-  { path: 'customers/detail/:id', component: CustomerDetailComponent },
-  { path: 'customers/edit/:id', component: CustomerEditComponent },
-  { path: 'customers/delete/:id', component: CustomerDeleteComponent },
-
- 
-
-
-];
-
+    { path: 'customers/create', component: CustomerCreateComponent },
+    { path: 'customers/detail/:id', component: CustomerDetailComponent },
+    { path: 'customers/edit/:id', component: CustomerEditComponent },
+    { path: 'customers/delete/:id', component: CustomerDeleteComponent },
+  ];
 
 @NgModule({
   declarations: [
@@ -106,24 +90,13 @@ const routes =
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
-    MenuItemIndexComponent,   
+    MenuItemIndexComponent,
     RestaurantIndexComponent,
     RestaurantCreateComponent,
     OrderIndexComponent,
     RestaurantDetailComponent,
     RestaurantEditComponent,
-
-
-   
-
-
-
-
-  
-
-
     RestaurantDeleteComponent,
-
     LoginComponent,
     RestaurantCreateComponent,
     OrderIndexComponent,
@@ -132,22 +105,14 @@ const routes =
     CustomerDetailComponent,
     CustomerEditComponent,
     CustomerDeleteComponent,
-
-    
     OrderCreateComponent,
-    
     OrderDetailComponent,
-    
     OrderEditComponent,
-    
-    OrderDeleteComponent
-
-
+    OrderDeleteComponent,
     MenuItemCreateComponent,
     MenuItemDetailComponent,
     MenuItemEditComponent,
     MenuItemDeleteComponent
-
   ],
 
   imports: [
@@ -162,11 +127,6 @@ const routes =
     MatFormFieldModule,
     MatInputModule,
     MatTableModule
-
- 
-
-
-
   ],
 
   providers: [
