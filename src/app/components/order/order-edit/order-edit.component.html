@@ -1,0 +1,24 @@
+<h1>Edit Order</h1>
+<hr>
+<div *ngIf="order">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editOrderForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="OrderId" formControlName="OrderId" type="OrderId" required [value]="order.OrderId"/>
+        </mat-form-field>
+      </div>
+
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="Comments" formControlName="Comments" type="Comments" required [value]="order.Comments"/>
+        </mat-form-field>
+      </div>
+      
+      <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    </div>
+  </form>
+</div>
+
+
+<a  mat-button routerLink="/orders">Back To List</a>
