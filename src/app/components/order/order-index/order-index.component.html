@@ -1,3 +1,33 @@
-<p>
-  order-index works!
-</p>
+<h1> INDEX </h1>
+<a mat-raised-button color="primary" routerLink="/orders/create"> Create New </a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef ="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row;columns:columnNames;"></mat-row>
+  </mat-table>
+</div>
+
+<ng-container matColumnDef ="details">
+  <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+  <mat-cell *matCellDef="let order"><i class="material-icons">library_books</i></mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="OrderId">
+  <mat-header-cell *matHeaderCellDef>Order #</mat-header-cell>
+  <mat-cell matCellDef ="let order">{{order.OrderId}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Comments">
+  <mat-header-cell *matHeaderCellDef>Comments</mat-header-cell>
+  <mat-cell matCellDef ="let order">{{order.Comments}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="buttons">
+  <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+  <mat-cell *matCellDef="let order">
+    <i mat-icon class="material-icons" routerLink="/order/edit/{{order.OrderId}}">edit</i>
+    <i class="material-icons" routerLink="/orders/delete/{{order.OrderId}}">delete</i>
+  </mat-cell>
+</ng-container>

@@ -39,35 +39,42 @@ import { CustomerDetailComponent } from './components/customer/customer-detail/c
 import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 
+import { OrderCreateComponent } from './components/order/order-create/order-create.component';
+import { OrderDetailComponent } from './components/order/order-detail/order-detail.component';
+import { OrderEditComponent } from './components/order/order-edit/order-edit.component';
+import { OrderDeleteComponent } from './components/order/order-delete/order-delete.component';
+
 
 const routes = 
  [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
  
-{
-   path:'restaurants',children:[
-    { path: '', component: RestaurantIndexComponent },
-    { path: 'create', component: RestaurantCreateComponent },
-    {path:'detail/:id',component:RestaurantDetailComponent},
-    {path:'edit/:id',component:RestaurantEditComponent},
-    {path:'delete/id',component:RestaurantDeleteComponent}
-  ]
-},
+
+   
+    { path: 'restaurants', component: RestaurantIndexComponent },
+    { path: 'restaurants/create', component: RestaurantCreateComponent },
+    {path:'restaurants/detail/:id',component:RestaurantDetailComponent},
+    {path:'restaurants/edit/:id',component:RestaurantEditComponent},
+    {path:'restaurants/delete/id',component:RestaurantDeleteComponent},
+  
 
   { path: 'menuItems', component: MenuItemIndexComponent },
   { path: 'customers', component: CustomerIndexComponent },
 
   { path: 'orders', component: OrderIndexComponent },
   { path: '**', component: RegistrationComponent },
- ];
+ {path:'orders/create', component:OrderCreateComponent},
+ {path:'orders/detail/:id',component:OrderDetailComponent},
+{path:'orders/delete/:id',component:OrderDeleteComponent},
 
+{path:'orders/edit/:id',component:OrderEditComponent},
 
   { path: 'customers/create', component: CustomerCreateComponent },
   { path: 'customers/detail/:id', component: CustomerDetailComponent },
   { path: 'customers/edit/:id', component: CustomerEditComponent },
   { path: 'customers/delete/:id', component: CustomerDeleteComponent },
-  { path: 'orders', component: OrderIndexComponent }
+ 
 ];
 
 
@@ -97,7 +104,7 @@ const routes =
     RestaurantEditComponent,
 
    
-    RestaurantDeleteComponent
+    RestaurantDeleteComponent,
 
 
 
@@ -110,7 +117,15 @@ const routes =
     CustomerCreateComponent,
     CustomerDetailComponent,
     CustomerEditComponent,
-    CustomerDeleteComponent
+    CustomerDeleteComponent,
+    
+    OrderCreateComponent,
+    
+    OrderDetailComponent,
+    
+    OrderEditComponent,
+    
+    OrderDeleteComponent
 
   ],
 
@@ -127,9 +142,7 @@ const routes =
     MatInputModule,
 
     MatTableModule
-   
-
-    MatTableModule 
+ 
 
   ],
 
