@@ -20,12 +20,12 @@ import { RestaurantsService } from './services/restaurants.service';
 import { CustomersService } from './services/customers.service';
 import { RestaurantIndexComponent } from './components/restaurant/restaurant-index/restaurant-index.component';
 import { AuthService } from './services/auth.service';
-import { MenuItemService } from './services/menuitems.service';
+import { MenuItemsService } from './services/menu-items.service';
 import { RestaurantCreateComponent } from './components/restaurant/restaurant-create/restaurant-create.component';
 import { OrdersService } from './services/orders.service';
 import { OrderIndexComponent } from './components/order/order-index/order-index.component';
 import { LoginComponent } from './components/login/login.component';
-import { MenuItemIndexComponent } from './components/menuItem/menuItem-index/menuItem';
+
 
 import { RestaurantDetailComponent } from './components/restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantEditComponent } from './components/restaurant/restaurant-edit/restaurant-edit.component';
@@ -39,6 +39,11 @@ import { CustomerDetailComponent } from './components/customer/customer-detail/c
 import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 
+import { MenuItemIndexComponent } from './components/menuItem/menu-item-index/menu-item-index.component';
+import { MenuItemCreateComponent } from './components/menuItem/menu-item-create/menu-item-create.component';
+import { MenuItemDetailComponent } from './components/menuItem/menu-item-detail/menu-item-detail.component';
+import { MenuItemEditComponent } from './components/menuItem/menu-item-edit/menu-item-edit.component';
+import { MenuItemDeleteComponent } from './components/menuItem/menu-item-delete/menu-item-delete.component';
 
 const routes = 
  [
@@ -54,20 +59,18 @@ const routes =
     {path:'delete/id',component:RestaurantDeleteComponent}
   ]
 },
-
   { path: 'menuItems', component: MenuItemIndexComponent },
+  { path: 'menuItems/create', component: MenuItemCreateComponent },
+  { path: 'menuItems/detail/:id', component: MenuItemDetailComponent },
+  { path: 'menuItems/edit/:id', component: MenuItemEditComponent },
+  { path: 'menuItems/delete/:id', component: MenuItemDeleteComponent },
   { path: 'customers', component: CustomerIndexComponent },
-
   { path: 'orders', component: OrderIndexComponent },
-  { path: '**', component: RegistrationComponent },
- ];
-
-
+  //{ path: '**', component: RegistrationComponent },
   { path: 'customers/create', component: CustomerCreateComponent },
   { path: 'customers/detail/:id', component: CustomerDetailComponent },
   { path: 'customers/edit/:id', component: CustomerEditComponent },
   { path: 'customers/delete/:id', component: CustomerDeleteComponent },
-  { path: 'orders', component: OrderIndexComponent }
 ];
 
 
@@ -76,33 +79,14 @@ const routes =
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
-    
     LoginComponent,
-    MenuItemIndexComponent,
-
-
-   
+    MenuItemIndexComponent,   
     RestaurantIndexComponent,
-
-   
     RestaurantCreateComponent,
-
-   
     OrderIndexComponent,
-
-   
     RestaurantDetailComponent,
-
-   
     RestaurantEditComponent,
-
-   
-    RestaurantDeleteComponent
-
-
-
-  
-
+    RestaurantDeleteComponent,
     LoginComponent,
     RestaurantCreateComponent,
     OrderIndexComponent,
@@ -110,8 +94,11 @@ const routes =
     CustomerCreateComponent,
     CustomerDetailComponent,
     CustomerEditComponent,
-    CustomerDeleteComponent
-
+    CustomerDeleteComponent,
+    MenuItemCreateComponent,
+    MenuItemDetailComponent,
+    MenuItemEditComponent,
+    MenuItemDeleteComponent
   ],
 
   imports: [
@@ -125,17 +112,12 @@ const routes =
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-
     MatTableModule
-   
-
-    MatTableModule 
-
   ],
 
   providers: [
     AuthService,
-    MenuItemService,
+    MenuItemsService,
     OrdersService,
     RestaurantsService,
     CustomersService

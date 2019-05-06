@@ -1,0 +1,30 @@
+<h1>Create a Menu Item.</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="menuItemForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="MenuItemName" formControlName="MenuItemName" type="MenuItemName" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="MenuItemPrice" formControlName="MenuItemPrice" type="MenuItemPrice" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="MenuItemDescription" formControlName="MenuItemDescription" type="MenuItemDescription" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="MenuItemPicture" formControlName="MenuItemPicture" type="MenuItemPicture" required/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Menu Item</button>
+</form>
+
+<a mat-button routerLink="/menuItems">Back to List</a>

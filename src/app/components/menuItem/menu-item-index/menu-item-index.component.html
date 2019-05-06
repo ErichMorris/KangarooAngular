@@ -1,0 +1,49 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/menuItems/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    
+    <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let menuItem" routerLink="/menuItems/detail/{{menuItem.MenuItemId}}"> 
+          <i class="material-icons">library_books</i></mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="MenuItemId">
+        <mat-header-cell *matHeaderCellDef> Menu Item ID </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemId}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemName">
+        <mat-header-cell *matHeaderCellDef> Menu Item Name </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemPrice">
+        <mat-header-cell *matHeaderCellDef> Menu Item Price </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemPrice}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemDescription">
+        <mat-header-cell *matHeaderCellDef> Menu Item Description </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemDescription}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemPicture">
+        <mat-header-cell *matHeaderCellDef> Menu Item Picture </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemPicture}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem">
+          <i mat-icon class="material-icons" routerLink="/menuItems/edit/{{menuItem.MenuItemId}}">edit</i>
+          <i class="material-icons" routerLink="/menuItems/delete/{{menuItem.MenuItemId}}">delete</i>
+        </mat-cell>
+      </ng-container>
+  </mat-table>
+</div>
