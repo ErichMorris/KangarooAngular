@@ -94,7 +94,6 @@ const routes =
     RestaurantDeleteComponent,
     LoginComponent,
     RestaurantCreateComponent,
-    //OrderIndexComponent,
     CustomerIndexComponent,
     CustomerCreateComponent,
     CustomerDetailComponent,
