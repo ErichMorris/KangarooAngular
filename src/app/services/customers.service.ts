@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Customer } from '../models/Customer';
 
-const ApiUrl = "";
+const ApiUrl = "https://kangaroofooddelivery.azurewebsites.net";
 
 @Injectable()
 export class CustomersService {
