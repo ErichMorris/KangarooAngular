@@ -5,7 +5,9 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'http://localhost:63711/';
+
+const Api_Url = "https://kangaroofooddelivery.azurewebsites.net";
+
 
 @Injectable()
 export class AuthService {
