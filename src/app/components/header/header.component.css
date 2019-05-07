@@ -4,5 +4,8 @@
 
 .nav-btn {
     margin-right: 0.5em;
+background-color:darkgray;
+}
+.mat-toolbar{
     background-color: #cc7700;
 }
