@@ -32,7 +32,9 @@ export class MenuItemEditComponent implements OnInit {
   createForm() {
     this.editMenuItemForm = this._form.group({
       MenuItemId: new FormControl(this.menuItem.MenuItemId),
+      RestaurantId: new FormControl(this.menuItem.RestaurantId),
       MenuItemName: new FormControl(this.menuItem.MenuItemName),
+      Name: new FormControl(this.menuItem.Name),
       MenuItemPrice: new FormControl(this.menuItem.MenuItemPrice),
       MenuItemDescription: new FormControl(this.menuItem.MenuItemDescription),
       MenuItemPicture: new FormControl(this.menuItem.MenuItemPicture)
@@ -42,7 +44,9 @@ export class MenuItemEditComponent implements OnInit {
   onSubmit(form) {
     const updateMenuItem: MenuItem = {
       MenuItemId: form.value.MenuItemId,
+      RestaurantId: form.value.RestaurantId,
       MenuItemName: form.value.MenuItemName,
+      Name: form.value.Name,
       MenuItemPrice: form.value.MenuItemPrice,
       MenuItemDescription: form.value.MenuItemDescription,
       MenuItemPicture: form.value.MenuItemPicture

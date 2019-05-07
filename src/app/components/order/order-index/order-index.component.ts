@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {OrdersService} from '../../../services/orders.service';
-import {Order} from '../../../models/Order';
 import { MatTableDataSource } from '@angular/material';
- 
+import { OrdersService } from 'src/app/services/orders.service';
+import { Order } from 'src/app/models/Order';
 
 @Component({
   selector: 'app-order-index',
@@ -14,10 +13,9 @@ export class OrderIndexComponent implements OnInit {
   constructor(private _orderService: OrdersService) { }
 
   ngOnInit() {
-    this._orderService.getOrders().subscribe((orders: Order [])=>{
-this.dataSource=new MatTableDataSource<Order>(orders);
-    } );
+    this._orderService.getOrders().subscribe((orders: Order[]) => {
+    });
   }
-  columnNames=['details','OrderId','Comments','buttons'];
-  dataSource:MatTableDataSource<Order>
+  columnNames = ['details', 'OrderId', 'Comments', 'buttons'];
+  dataSource: MatTableDataSource<Order>;
 }

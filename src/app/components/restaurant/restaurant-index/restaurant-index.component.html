@@ -1,61 +1,59 @@
 <h1>Index</h1>
 <a mat-raised-button color="primary" routerLink="/restaurants/create">Create New</a>
 <hr>
+
 <div>
-  <mat-table #table [dataSource] ="dataSource">
-    <mat-header-row *matHeaderRowDef ="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row;columns:columnNames;"></mat-row>
-
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    
     <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let restaurant" routerLink="/restaurants/detail/{{restaurants.RestaurantId}}"> 
-        <i class="material-icons">library_books</i></mat-cell>
-    </ng-container>
-    
-    <ng-container matColumnDef="RestaurantId">
-      <mat-header-cell *matHeaderCellDef> Restaurant # </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.RestaurantId}} </mat-cell>
-    </ng-container>
-    
-    <ng-container matColumnDef="Name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.Name}} </mat-cell>
-    </ng-container>
-    
-    <ng-container matColumnDef="Address">
-      <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.Address}} </mat-cell>
-    </ng-container>
-   
-    <ng-container matColumnDef="Description">
-      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.Description}} </mat-cell>
-    </ng-container>
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let restaurant" routerLink="/restaurants/detail/{{restaurant.RestaurantId}}"> 
+          <i class="material-icons">library_books</i></mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="RestaurantId">
+        <mat-header-cell *matHeaderCellDef> Restaurant ID </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.RestaurantId}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="ContactNumber">
-      <mat-header-cell *matHeaderCellDef> ContactNumber </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.ContactNumber}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.Name}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="ContactEmail">
-      <mat-header-cell *matHeaderCellDef> ContactEmail </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.ContactEmail}} </mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="Address">
+        <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.Address}} </mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="Rating">
-      <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant"> {{restaurant.Rating}} </mat-cell>
-    </ng-container>
-    
-    <ng-container matColumnDef="buttons">
-      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-      <mat-cell *matCellDef="let restaurant">
-        <i mat-icon class="material-icons" routerLink="/restaurant/edit/{{restaurant.RestaurantId}}">edit</i>
-        <i class="material-icons" routerLink="/restaurants/delete/{{restaurant.RestaurantId}}">delete</i>
-      </mat-cell>
+      <ng-container matColumnDef="Description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.Description}} </mat-cell>
+      </ng-container>
 
-    </ng-container>
+      <ng-container matColumnDef="ContactNumber">
+        <mat-header-cell *matHeaderCellDef> Contact Number </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.ContactNumber}} </mat-cell>
+      </ng-container>
 
-  
-    </mat-table>
+      <ng-container matColumnDef="ContactEmail">
+        <mat-header-cell *matHeaderCellDef> Contact Email </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.ContactEmail}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Rating">
+        <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant"> {{restaurant.Rating}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let restaurant">
+          <i mat-icon class="material-icons" routerLink="/restaurants/edit/{{restaurant.RestaurantId}}">edit</i>
+          <i class="material-icons" routerLink="/restaurants/delete/{{restaurant.RestaurantId}}">delete</i>
+        </mat-cell>
+      </ng-container>
+  </mat-table>
 </div>

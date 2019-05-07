@@ -16,7 +16,7 @@ export class MenuItemIndexComponent implements OnInit {
     this._menuItemService.getMenuItems().subscribe((menuItems: MenuItem[]) => {
     });
   }
-  columnNames = ['details', 'MenuItemId', 'MenuItemName', 'MenuItemPrice',
+  columnNames = ['details', 'MenuItemId', 'RestaurantId', 'MenuItemName', 'Name', 'MenuItemPrice',
    'MenuItemDescription', 'MenuItemDescription', 'buttons'];
   dataSource: MatTableDataSource<MenuItem>;
 }
