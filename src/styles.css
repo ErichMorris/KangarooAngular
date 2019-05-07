@@ -7,5 +7,5 @@ body, html {
     font-family: 'Roboto', 'Arial', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(C:\DotNetProjects\KangarooAngular\src\app\Assets\second.jpg)
+    background-image: url(src\app\Assets\second.jpg)
 }

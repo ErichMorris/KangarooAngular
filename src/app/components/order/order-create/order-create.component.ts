@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {OrdersService} from '../../../services/orders.service';
 import {FormBuilder,FormGroup,FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
+import { from } from 'rxjs';
 
 
 
@@ -22,6 +23,10 @@ orderForm:FormGroup;
 createForm() {
 this.orderForm=this._form.group({
   Comments:new FormControl,
+  MenuItemName:new FormControl,
+  MenuItemPrice:new FormControl,
+  CustomerName:new FormControl,
+  CustomerAddress:new FormControl
 });
 }
 
