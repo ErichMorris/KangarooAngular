@@ -16,6 +16,6 @@ export class OrderIndexComponent implements OnInit {
     this._orderService.getOrders().subscribe((orders: Order[]) => {
     });
   }
-  columnNames = ['details', 'OrderId', 'Comments', 'buttons'];
+  columnNames = ['details', 'OrderId', 'Comments','CustomerId','CustomerName','CustomerAddress','MenuItemId','MenuItemName','MenuItemPrice', 'buttons'];
   dataSource: MatTableDataSource<Order>;
 }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { Order } from 'src/app/models/Order';
 import { OrdersService } from 'src/app/services/orders.service';
+import {MenuItem} from 'src/app/models/MenuItem';
+import {Customer} from 'src/app/models/Customer';
+ import { from } from 'rxjs';
 
 
 @Component({
