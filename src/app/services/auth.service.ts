@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = "";
+const Api_Url = 'http://localhost:63711/';
 
 @Injectable()
 export class AuthService {
