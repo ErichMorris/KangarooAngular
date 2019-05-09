@@ -14,6 +14,7 @@ export class OrderIndexComponent implements OnInit {
 
   ngOnInit() {
     this._orderService.getOrders().subscribe((orders: Order[]) => {
+      this.dataSource = new MatTableDataSource<Order>(orders);
     });
   }
   columnNames = ['details', 'OrderId', 'Comments','CustomerId','CustomerName','CustomerAddress','MenuItemId','MenuItemName','MenuItemPrice', 'buttons'];
