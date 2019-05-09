@@ -12,7 +12,7 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component'
+import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -48,6 +48,10 @@ import { MenuItemDetailComponent } from './components/menuItem/menu-item-detail/
 import { MenuItemEditComponent } from './components/menuItem/menu-item-edit/menu-item-edit.component';
 import { MenuItemDeleteComponent } from './components/menuItem/menu-item-delete/menu-item-delete.component';
 
+import { AboutComponent } from './components/about/about.component';
+
+
+
 const routes =
   [
     { path: 'register', component: RegistrationComponent },
@@ -69,8 +73,8 @@ const routes =
     { path: 'orders/detail/:id', component: OrderDetailComponent },
     { path: 'orders/delete/:id', component: OrderDeleteComponent },
     { path: 'orders/edit/:id', component: OrderEditComponent },
-  
-
+    { path: 'about', component: AboutComponent },
+    //{ path: '**', component: RegistrationComponent },
     { path: 'customers/create', component: CustomerCreateComponent },
     { path: 'customers/detail/:id', component: CustomerDetailComponent },
     { path: 'customers/edit/:id', component: CustomerEditComponent },
@@ -83,6 +87,7 @@ const routes =
     HeaderComponent,
     RegistrationComponent,
     LoginComponent,
+    AboutComponent,
     MenuItemIndexComponent,
     RestaurantIndexComponent,
     RestaurantCreateComponent,
