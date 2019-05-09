@@ -1,8 +1,13 @@
 <h1>Create a Order.</h1>
 <hr>
 ​
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="noteForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="orderForm">
   <div>
+      <div>
+          <mat-form-field>
+            <input matInput placeholder="OrderId" formControlName="OrderId" type="OrderId" required/>
+          </mat-form-field>
+        </div>
     <div>
       <mat-form-field>
         <input matInput placeholder="Comments" formControlName="Comments" type="Comments" required/>
@@ -24,4 +29,4 @@
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Order</button>
 </form>
 ​
-<a mat-button routerLink="/notes">Back to List</a>
+<a mat-button routerLink="/orders">Back to List</a>
