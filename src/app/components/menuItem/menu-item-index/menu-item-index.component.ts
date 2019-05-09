@@ -14,6 +14,7 @@ export class MenuItemIndexComponent implements OnInit {
 
   ngOnInit() {
     this._menuItemService.getMenuItems().subscribe((menuItems: MenuItem[]) => {
+      this.dataSource = new MatTableDataSource<MenuItem>(menuItems);
     });
   }
   columnNames = ['details', 'MenuItemId', 'RestaurantId', 'MenuItemName', 'Name', 'MenuItemPrice',

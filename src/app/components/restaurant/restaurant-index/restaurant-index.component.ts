@@ -14,6 +14,7 @@ export class RestaurantIndexComponent implements OnInit {
 
   ngOnInit() {
     this._restaurantService.getRestaurants().subscribe((restaurants: Restaurant[]) => {
+      this.dataSource = new MatTableDataSource<Restaurant>(restaurants); 
     });
   }
   columnNames = ['details', 'RestaurantId', 'Name', 'Address',
