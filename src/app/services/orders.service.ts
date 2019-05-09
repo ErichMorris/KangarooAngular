@@ -3,7 +3,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Order } from '../models/Order';
 
 
-const ApiUrl ='https://kangaroofooddelivery.azurewebsites.net';
+const ApiUrl ='https://kangaroodelivery.azurewebsites.net';
 
 
 @Injectable()
