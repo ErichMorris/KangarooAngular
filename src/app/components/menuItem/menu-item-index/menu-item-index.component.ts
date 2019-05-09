@@ -17,7 +17,7 @@ export class MenuItemIndexComponent implements OnInit {
       this.dataSource = new MatTableDataSource<MenuItem>(menuItems);
     });
   }
-  columnNames = ['details', 'MenuItemId', 'RestaurantId', 'MenuItemName', 'Name', 'MenuItemPrice',
+  columnNames = ['details', 'MenuItemId', 'MenuItemName', 'Name', 'MenuItemPrice',
    'MenuItemDescription', 'MenuItemDescription', 'buttons'];
   dataSource: MatTableDataSource<MenuItem>;
 }
