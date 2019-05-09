@@ -21,11 +21,12 @@ export class MenuItemCreateComponent implements OnInit {
 
   createForm() {
     this.menuItemForm = this._form.group({
+      MenuItemId: new FormControl,
       MenuItemName: new FormControl,
-      Name: new FormControl,
       MenuItemPrice: new FormControl,
       MenuItemDescription: new FormControl,
-      MenuItemPicture: new FormControl
+      MenuItemPicture: new FormControl,
+      RestaurantId: new FormControl
     });
   }
 
