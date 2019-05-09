@@ -21,7 +21,6 @@ export class MenuItemCreateComponent implements OnInit {
 
   createForm() {
     this.menuItemForm = this._form.group({
-      MenuItemId: new FormControl,
       MenuItemName: new FormControl,
       MenuItemPrice: new FormControl,
       MenuItemDescription: new FormControl,
