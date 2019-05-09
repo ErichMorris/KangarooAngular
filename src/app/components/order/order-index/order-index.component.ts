@@ -17,6 +17,6 @@ export class OrderIndexComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Order>(orders);
     });
   }
-  columnNames = ['details', 'OrderId', 'Comments','CustomerId','CustomerName','CustomerAddress','MenuItemId','MenuItemName','MenuItemPrice', 'buttons'];
+  columnNames = ['details', 'OrderId', 'Comments','CustomerName','CustomerAddress','MenuItemName','MenuItemPrice', 'buttons'];
   dataSource: MatTableDataSource<Order>;
 }
