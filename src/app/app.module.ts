@@ -49,6 +49,10 @@ import { MenuItemEditComponent } from './components/menuItem/menu-item-edit/menu
 import { MenuItemDeleteComponent } from './components/menuItem/menu-item-delete/menu-item-delete.component';
 
 import { AboutComponent } from './components/about/about.component';
+import { UserCustomerComponent } from './components/user-customer/user-customer.component';
+import { UserRestaurantComponent } from './components/user-restaurant/user-restaurant.component';
+import { UserMenuComponent } from './components/user-menu/user-menu.component';
+import { UserConfirmationComponent } from './components/user-confirmation/user-confirmation.component';
 
 
 
@@ -110,6 +114,10 @@ const routes =
     MenuItemDetailComponent,
     MenuItemEditComponent,
     MenuItemDeleteComponent,
+    UserCustomerComponent,
+    UserRestaurantComponent,
+    UserMenuComponent,
+    UserConfirmationComponent,
    
   ],
 

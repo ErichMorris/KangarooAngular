@@ -18,6 +18,6 @@ export class MenuItemIndexComponent implements OnInit {
     });
   }
   columnNames = ['details', 'MenuItemId', 'MenuItemName', 'Name', 'MenuItemPrice',
-   'MenuItemDescription', 'MenuItemDescription', 'buttons'];
+   'MenuItemDescription', 'MenuItemPicture', 'buttons'];
   dataSource: MatTableDataSource<MenuItem>;
 }
