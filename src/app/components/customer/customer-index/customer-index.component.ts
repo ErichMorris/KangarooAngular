@@ -14,6 +14,7 @@ export class CustomerIndexComponent implements OnInit {
 
   ngOnInit() {
     this._customerService.getCustomers().subscribe((customers: Customer[]) => {
+      this.dataSource = new MatTableDataSource<Customer>(customers);
     });
   }
   columnNames = ['details', 'CustomerId', 'CustomerName', 'CustomerAddress',

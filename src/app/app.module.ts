@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -68,16 +68,13 @@ const routes =
     { path: 'menuItems/delete/:id', component: MenuItemDeleteComponent },
     { path: 'customers', component: CustomerIndexComponent },
     { path: 'orders', component: OrderIndexComponent },
-    { path: '**', component: RegistrationComponent },
+    //{ path: '**', component: RegistrationComponent },
     { path: 'orders/create', component: OrderCreateComponent },
     { path: 'orders/detail/:id', component: OrderDetailComponent },
     { path: 'orders/delete/:id', component: OrderDeleteComponent },
     { path: 'orders/edit/:id', component: OrderEditComponent },
     { path: 'about', component: AboutComponent },
-
-
     //{ path: '**', component: RegistrationComponent },
-
     { path: 'customers/create', component: CustomerCreateComponent },
     { path: 'customers/detail/:id', component: CustomerDetailComponent },
     { path: 'customers/edit/:id', component: CustomerEditComponent },
@@ -112,7 +109,8 @@ const routes =
     MenuItemCreateComponent,
     MenuItemDetailComponent,
     MenuItemEditComponent,
-    MenuItemDeleteComponent
+    MenuItemDeleteComponent,
+   
   ],
 
   imports: [
