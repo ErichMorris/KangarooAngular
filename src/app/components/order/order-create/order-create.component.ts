@@ -22,11 +22,10 @@ orderForm:FormGroup;
 
 createForm() {
 this.orderForm=this._form.group({
+  OrderId:new FormControl,
   Comments:new FormControl,
-  MenuItemName:new FormControl,
-  MenuItemPrice:new FormControl,
-  CustomerName:new FormControl,
-  CustomerAddress:new FormControl
+  MenuItemId:new FormControl,
+  CustomerId:new FormControl
 });
 }
 
