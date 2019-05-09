@@ -64,7 +64,7 @@ const routes =
     { path: 'menuItems/delete/:id', component: MenuItemDeleteComponent },
     { path: 'customers', component: CustomerIndexComponent },
     { path: 'orders', component: OrderIndexComponent },
-    { path: '**', component: RegistrationComponent },
+    //{ path: '**', component: RegistrationComponent },
     { path: 'orders/create', component: OrderCreateComponent },
     { path: 'orders/detail/:id', component: OrderDetailComponent },
     { path: 'orders/delete/:id', component: OrderDeleteComponent },
