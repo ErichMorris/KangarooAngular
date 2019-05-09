@@ -20,7 +20,7 @@
 
       <ng-container matColumnDef="RestaurantId">
         <mat-header-cell *matHeaderCellDef> restaurant ID </mat-header-cell>
-        <mat-cell *matCellDef="let restaurant"> {{menuItem.RestaurantId}} </mat-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.RestaurantId}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="MenuItemName">
@@ -30,7 +30,7 @@
 
       <ng-container matColumnDef="Name">
         <mat-header-cell *matHeaderCellDef> Restaurant Name </mat-header-cell>
-        <mat-cell *matCellDef="let restaurant"> {{menuItem.Name}} </mat-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.Name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="MenuItemPrice">
