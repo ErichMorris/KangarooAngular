@@ -1,8 +1,36 @@
 <h1>Details</h1>
 
 <hr>
-<div *ngIf="restaurant">
+<div  *ngIf="restaurant">
   <div>
-    <label
+    <label for="">RestaurantId: </label>
+    <span>{{restaurant.RestaurantId}}</span>
   </div>
+  <div>
+    <label for="">Name: </label>
+    <span>{{restaurant.Name}}</span>
+  </div>
+  <div>
+    <label for="">Address:</label>
+    <span>{{restaurant.Address}}</span>
+  </div>
+  <div>
+    <label for="">Description: </label>
+    <span>{{restaurant.Description}}</span>
+  </div>
+  <div>
+    <label for="">Contact Number: </label>
+    <span>{{restaurant.ContactNumber}}</span>
+  </div>
+  <div>
+    <label for="">Contact Email: </label>
+    <span>{{restaurant.ContactEmail}}</span>
+  </div>
+  <div>
+      <label for="">Rating: </label>
+      <span>{{restaurant.Rating}}</span>
+    </div>
+
 </div>
+
+<button mat-button color="primary" routerLink="/restaurants">Back to List</button>
