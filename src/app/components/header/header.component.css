@@ -1,11 +1,15 @@
 .example-fill-remaining-space {
     flex: 1 1 auto;
 }
-
+.dum{
+    font-family: 'Libre Baskerville', serif;
+}
 .nav-btn {
     margin-right: 0.5em;
-background-color:darkgray;
+background-color:orangered;
+box-shadow: greenyellow;
+font-family: 'Shadows Into Light', cursive;
 }
 .mat-toolbar{
-    background-color: #cc7700;
+   background-color: silver;
 }

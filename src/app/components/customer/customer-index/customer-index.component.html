@@ -1,12 +1,13 @@
-<h1>Index</h1>
+<div class="dum">Index</div>
 <a mat-raised-button color="primary" routerLink="/customers/create">Create New</a>
 <hr>
-
+<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Shadows+Into+Light" rel="stylesheet">
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-    
+    <div class="gums">
     <ng-container matColumnDef="details">
         <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
         <mat-cell *matCellDef="let customer" routerLink="/customers/detail/{{customer.CustomerId}}"> 
@@ -37,7 +38,7 @@
         <mat-header-cell *matHeaderCellDef> Customer Email </mat-header-cell>
         <mat-cell *matCellDef="let customer"> {{customer.CustomerEmail}} </mat-cell>
       </ng-container>
-
+</div>
       <ng-container matColumnDef="buttons">
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell *matCellDef="let customer">
