@@ -23,7 +23,7 @@ this.restaurant=singleRestaurant;
   }
 
   onDelete(){
-    this._restaurantService.deleteRestaurant(this.restaurant.RestaurantId).subscribe(()=>{
+    this._restaurantService.deleteRestaurant(this.restaurant.RestaurantId).subscribe(() => {
       this._router.navigate(['/restaurants']);
     });
   }

@@ -14,19 +14,28 @@ body, html {
 }
 
 .indexTitleContainer {
-    background-color:grey;
+    background-color:silver;
     text-align: center;
     margin-left: 40%;
     margin-right: 40%;
     margin-top: 20%;
+    font-family: 'Special Elite', cursive;
+    font-size: 40px;
 }
 
 .indexBodyContainer {
-    background-color:grey;
+    background-color:silver;
     text-align: center;
     margin-left: 30%;
     margin-right: 30%;
     padding-right: 10px;
     padding-left: 10px;
-
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+}
+.mat-raised-button.mat-primary {
+    background-color: orangered;
+}
+.mat-table.mat-table{
+background-color: silver;
 }
