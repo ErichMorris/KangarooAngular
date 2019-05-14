@@ -53,6 +53,7 @@ import { UserCustomerComponent } from './components/user-customer/user-customer.
 import { UserRestaurantComponent } from './components/user-restaurant/user-restaurant.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
 import { UserConfirmationComponent } from './components/user-confirmation/user-confirmation.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
 
 
 
@@ -72,12 +73,15 @@ const routes =
     { path: 'menuItems/delete/:id', component: MenuItemDeleteComponent },
     { path: 'customers', component: CustomerIndexComponent },
     { path: 'orders', component: OrderIndexComponent },
-    //{ path: '**', component: RegistrationComponent },
+    { path: '', component: UserHomeComponent },
     { path: 'orders/create', component: OrderCreateComponent },
     { path: 'orders/detail/:id', component: OrderDetailComponent },
     { path: 'orders/delete/:id', component: OrderDeleteComponent },
     { path: 'orders/edit/:id', component: OrderEditComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'home', component: UserHomeComponent },
+    { path: 'userCustomer', component: UserCustomerComponent },
+    { path: 'userRestaurant', component: UserRestaurantComponent },
     //{ path: '**', component: RegistrationComponent },
     { path: 'customers/create', component: CustomerCreateComponent },
     { path: 'customers/detail/:id', component: CustomerDetailComponent },
@@ -118,6 +122,7 @@ const routes =
     UserRestaurantComponent,
     UserMenuComponent,
     UserConfirmationComponent,
+    UserHomeComponent,
    
   ],
 

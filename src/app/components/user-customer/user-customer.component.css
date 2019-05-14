@@ -1,0 +1,8 @@
+.userCustomerContainer {
+    background-color: grey;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10%;
+    padding-bottom: 10px;
+    border: 5px solid black;
+}
