@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
 
-const Api_Url = "https://kangaroodelivery.azurewebsites.net";
+const Api_Url = "https://kangaroodeliveryapi.azurewebsites.net";
 
 
 @Injectable()

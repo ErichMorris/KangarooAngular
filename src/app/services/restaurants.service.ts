@@ -5,7 +5,7 @@ import { Restaurant } from '../models/Restaurant';
 
 
 
-const ApiUrl ='https://kangaroodelivery.azurewebsites.net/api';
+const ApiUrl ='https://kangaroodeliveryapi.azurewebsites.net/api';
 
 
 
