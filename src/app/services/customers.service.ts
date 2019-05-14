@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Customer } from '../models/Customer';
 
 
-const ApiUrl = "hhttps://kangaroodeliveryapi.azurewebsites.net/api";
+
+const ApiUrl = "https://kangaroodeliveryapi.azurewebsites.net/api";
+
 
 
 

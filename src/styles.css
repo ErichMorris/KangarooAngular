@@ -7,5 +7,26 @@ body, html {
     font-family: 'Roboto', 'Arial', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
+
     background-image: url(src\app\Assets\white-2.jpg.optimal.jpg)
+
+
+}
+
+.indexTitleContainer {
+    background-color:grey;
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 20%;
+}
+
+.indexBodyContainer {
+    background-color:grey;
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-right: 10px;
+    padding-left: 10px;
+
 }
