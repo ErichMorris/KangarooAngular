@@ -1,14 +1,14 @@
 <mat-toolbar color="primary">
 
   <div class="dum">
-      <button mat-button routerLink = "/home">Kangaroo!</button>
+      <button *ngIf="isLoggedIn" mat-button routerLink = "/home">Kangaroo!</button>
   </div>
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Shadows+Into+Light" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-  <button mat-stroked-button class="nav-btn" routerLink="/restaurants">Restaurant</button>
-  <button mat-stroked-button class="nav-btn" routerLink="/menuItems">MenuItem</button>
-  <button mat-stroked-button class="nav-btn" routerLink="/orders">Orders</button>
-  <button mat-stroked-button class="nav-btn" routerLink="/customers">Customer</button>
+  <button *ngIf="isAdmin" mat-stroked-button class="nav-btn" routerLink="/restaurants">Restaurant</button>
+  <button *ngIf="isAdmin" mat-stroked-button class="nav-btn" routerLink="/menuItems">MenuItem</button>
+  <button *ngIf="isAdmin" mat-stroked-button class="nav-btn" routerLink="/orders">Orders</button>
+  <button *ngIf="isAdmin" mat-stroked-button class="nav-btn" routerLink="/customers">Customer</button>
 
 
 
@@ -16,6 +16,9 @@
   <span class="example-fill-remaining-space"></span>
   <button mat-stroked-button class="nav-btn" routerLink="/register">Register</button>
   <button mat-stroked-button class="nav-btn" routerLink="/login">Login </button>
+  <button *ngIf="isLoggedIn" mat-menu-item (click)="onLogOut()" routerLink="/login">
+    <span>Logout</span>
+  </button>
  
 
 </mat-toolbar>
