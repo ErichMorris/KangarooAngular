@@ -21,11 +21,15 @@ export class RegistrationComponent implements OnInit {
     this._registerForm = this._form.group({
       email: new FormControl,
       password: new FormControl,
-      confirmPassword: new FormControl
+      confirmPassword: new FormControl,
+      isAdmin: new FormControl
     });
   }
 
   onSubmit() {
+    if (this._registerForm.value.isAdmin != true) {
+      this._registerForm.value.isAdmin = false;
+    };
     console.log(this._registerForm.value);
     this._authService
     .register(this._registerForm.value)
