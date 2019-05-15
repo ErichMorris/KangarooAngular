@@ -54,6 +54,7 @@ import { UserRestaurantComponent } from './components/user-restaurant/user-resta
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
 import { UserConfirmationComponent } from './components/user-confirmation/user-confirmation.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
+import { AdminIndexComponent } from './components/admin-index/admin-index.component';
 
 
 
@@ -124,6 +125,7 @@ const routes =
     UserMenuComponent,
     UserConfirmationComponent,
     UserHomeComponent,
+    AdminIndexComponent,
    
   ],
 
