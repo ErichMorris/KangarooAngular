@@ -1,7 +1,7 @@
 {
   "name": "kangaroo-angular",
   "version": "0.0.0",
-  "engines":{
+  "engines": {
     "node": "10.15.3"
   },
   "scripts": {
