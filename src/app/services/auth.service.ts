@@ -4,130 +4,47 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { UserInfo } from '../models/UserInfo';
-import { isAdmin } from '../models/isAdmin';
-import { APIURL } from '../../environments/environment.prod';
+
 
 const Api_Url = "https://kangaroodeliveryapi.azurewebsites.net";
 
 
-@Injectable({
-
-  providedIn: 'root'
-
-})
-
+@Injectable()
 export class AuthService {
-
-
-  user_role: isAdmin;
   userInfo: Token;
-  userData: Subject<{}>;
   isLoggedIn = new Subject<boolean>();
 
-
-
-  constructor(
-
-    private _http: HttpClient,
-
-    private _router: Router) { }
-
-
-
-  //private setHeader(): HttpHeaders {
-
-    //return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
-
- // }
-
-
+  constructor( private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: RegisterUser) {
-
-    return this._http.post(`${APIURL}/api/Account/Register`, regUserData);
-
+    return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
   }
-
-  getRole(){
-    if(!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)) }
- 
-    return this._http.get(`${APIURL}/api/Account/GetRole`, { headers: this.setHeader() } ).subscribe((isAdmin: isAdmin) =>{
-        this.user_role = isAdmin
-        localStorage.setItem('user_role', isAdmin.Role);
-        console.log(localStorage.getItem('user_role'));
-    }
-    );
-  }
-  
   login(loginInfo) {
-
-    const str =
-
+    const str = 
       `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
-
-    return this._http.post(`${APIURL}/Token`, str)
-
-      .subscribe((token: Token) => {
-
-        this.userInfo = token;
-
-        localStorage.setItem('id_token', token.access_token);
-
-        this.isLoggedIn.next(true);
-
-        this.setCurrentUser();
-
-        //window.location.reload();
-
-        this._router.navigate(['/home'],);
-
-      });
-
+    
+    return this._http.post(`${Api_Url}/Token`, str).subscribe( (token: Token) => {
+      this.userInfo = token;
+      localStorage.setItem('id_token', token.access_token);
+      this.isLoggedIn.next(true);
+      this._router.navigate(['/']);
+    });
   }
+  currentUser(): Observable<Object> {
+    if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
+    
+    const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
 
-
-
-  setCurrentUser() {
-
-    this._http.get(`${APIURL}/api/Account/UserInfo`, { headers: this.setHeader() })
-
-      .subscribe((userRole: UserInfo) => {
-
-        localStorage.setItem('user_role', userRole.Role);
-
-        localStorage.setItem('username', userRole.Username);
-
-        window.location.reload();
-
-      });
-
+    return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: authHeader });
   }
-
-  //logout(): Observable<Object> {
-  //localStorage.clear();
-  //this.isLoggedIn.next(false);
-
-  //return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
-  //}
-
-  private setHeader(): HttpHeaders {
-    return new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('id_token')}`);
-  }
-  logout() {
-
+  logout(): Observable<Object> {
     localStorage.clear();
-
     this.isLoggedIn.next(false);
 
-    this._http.post(`${APIURL}/api/Account/Logout`, { headers: this.setHeader() });
-
-    this._router.navigate(['/login']);
-
-    //window.location.reload();
-
+    return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
   }
 
-
-
+  private setHeader(): HttpHeaders {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  }
 }
