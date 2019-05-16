@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { UserInfo } from '../models/UserInfo';
 import { isAdmin } from '../models/isAdmin';
-
+import { APIURL } from '../../environments/environment.prod';
 
 const Api_Url = "https://kangaroodeliveryapi.azurewebsites.net";
 
@@ -45,14 +45,14 @@ export class AuthService {
 
   register(regUserData: RegisterUser) {
 
-    return this._http.post(`${Api_Url}/api/Account/Register`, regUserData);
+    return this._http.post(`${APIURL}/api/Account/Register`, regUserData);
 
   }
 
   getRole(){
     if(!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)) }
  
-    return this._http.get(`${Api_Url}/api/Account/GetRole`, { headers: this.setHeader() } ).subscribe((isAdmin: isAdmin) =>{
+    return this._http.get(`${APIURL}/api/Account/GetRole`, { headers: this.setHeader() } ).subscribe((isAdmin: isAdmin) =>{
         this.user_role = isAdmin
         localStorage.setItem('user_role', isAdmin.Role);
         console.log(localStorage.getItem('user_role'));
@@ -66,7 +66,7 @@ export class AuthService {
 
       `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
 
-    return this._http.post(`${Api_Url}/Token`, str)
+    return this._http.post(`${APIURL}/Token`, str)
 
       .subscribe((token: Token) => {
 
@@ -90,7 +90,7 @@ export class AuthService {
 
   setCurrentUser() {
 
-    this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() })
+    this._http.get(`${APIURL}/api/Account/UserInfo`, { headers: this.setHeader() })
 
       .subscribe((userRole: UserInfo) => {
 
@@ -120,7 +120,7 @@ export class AuthService {
 
     this.isLoggedIn.next(false);
 
-    this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() });
+    this._http.post(`${APIURL}/api/Account/Logout`, { headers: this.setHeader() });
 
     this._router.navigate(['/login']);
 
