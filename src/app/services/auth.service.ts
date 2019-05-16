@@ -78,7 +78,9 @@ export class AuthService {
 
         this.setCurrentUser();
 
-        this._router.navigate(['/home']);
+        //window.location.reload();
+
+        this._router.navigate(['/home'],);
 
       });
 
@@ -95,6 +97,8 @@ export class AuthService {
         localStorage.setItem('user_role', userRole.Role);
 
         localStorage.setItem('username', userRole.Username);
+
+        window.location.reload();
 
       });
 
@@ -119,6 +123,8 @@ export class AuthService {
     this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() });
 
     this._router.navigate(['/login']);
+
+    //window.location.reload();
 
   }
 

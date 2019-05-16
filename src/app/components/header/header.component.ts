@@ -21,11 +21,13 @@ export class HeaderComponent implements OnInit {
     if(localStorage.getItem('id_token')){
       this.isLoggedIn = true;
       this.username = localStorage.getItem('user');
-      if(localStorage.getItem('user_role') == "Admin"){
+      if(localStorage.getItem('username') == "Admin"){
         this.isAdmin = true;
+        console.log(this.isAdmin);
       }
       else{
         this.isAdmin = false;
+        console.log(this.isAdmin);
       }
     }
   }
