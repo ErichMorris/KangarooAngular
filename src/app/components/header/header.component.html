@@ -12,11 +12,12 @@
 
 
 
-  <button mat-stroked-button class="nav-btn" routerLink="/">About</button>
+  <button mat-stroked-button class="nav-btn" routerLink="/about">About</button>
+  <button mat-stroked-button class="nav-btn" routerLink="/contact">Contact</button>
   <span class="example-fill-remaining-space"></span>
   <button *ngIf="!isLoggedIn" mat-stroked-button class="nav-btn" routerLink="/register">Register</button>
   <button *ngIf="!isLoggedIn" mat-stroked-button class="nav-btn" routerLink="/login">Login </button>
-  <button *ngIf="isLoggedIn" mat-menu-item (click)="onLogOut()" routerLink="/login">
+  <button *ngIf="isLoggedIn" mat-stroked-button (click)="onLogOut()" routerLink="/login">
     <span>Logout</span>
   </button>
  
