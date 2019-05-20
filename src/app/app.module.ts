@@ -57,7 +57,8 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
 import { AdminIndexComponent } from './components/admin-index/admin-index.component';
 
 
-
+import {ContactComponent} from './components/contact/contact.component';
+  import { from } from 'rxjs';
 const routes =
   [
     { path: 'register', component: RegistrationComponent },
@@ -80,6 +81,7 @@ const routes =
     { path: 'orders/delete/:id', component: OrderDeleteComponent },
     { path: 'orders/edit/:id', component: OrderEditComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'contact', component:ContactComponent},
     { path: 'home', component: UserHomeComponent },
     { path: 'userCustomer', component: UserCustomerComponent },
     { path: 'userRestaurant', component: UserRestaurantComponent },
@@ -98,6 +100,7 @@ const routes =
     RegistrationComponent,
     LoginComponent,
     AboutComponent,
+    ContactComponent,
     MenuItemIndexComponent,
     RestaurantIndexComponent,
     RestaurantCreateComponent,
