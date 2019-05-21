@@ -10,10 +10,10 @@ import { MenuItem } from 'src/app/models/MenuItem';
 })
 export class UserMenuComponent implements OnInit {
 
-  constructor(private _menuItemService: MenuItemsService) { }
+  constructor(private _userMenuItemService: MenuItemsService) { }
 
   ngOnInit() {
-    this._menuItemService.getMenuItems().subscribe((menuItems: MenuItem[]) => {
+    this._userMenuItemService.getMenuItems().subscribe((menuItems: MenuItem[]) => {
       this.dataSource = new MatTableDataSource<MenuItem>(menuItems);
     });
   }
