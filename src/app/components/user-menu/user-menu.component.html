@@ -1,3 +1,39 @@
-<p>
-  user-menu works!
-</p>
+<div class="dum">Index</div>
+<hr>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Shadows+Into+Light" rel="stylesheet">
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+      
+      <ng-container matColumnDef="MenuItemId">
+        <mat-header-cell *matHeaderCellDef> Menu Item ID </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemId}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemName">
+        <mat-header-cell *matHeaderCellDef> Menu Item Name </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> Restaurant Name </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.Name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemPrice">
+        <mat-header-cell *matHeaderCellDef> Menu Item Price </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemPrice}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemDescription">
+        <mat-header-cell *matHeaderCellDef> Menu Item Description </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemDescription}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="MenuItemPicture">
+        <mat-header-cell *matHeaderCellDef> Menu Item Picture </mat-header-cell>
+        <mat-cell *matCellDef="let menuItem"> {{menuItem.MenuItemPicture}} </mat-cell>
+      </ng-container>
+  </mat-table>
+</div>
